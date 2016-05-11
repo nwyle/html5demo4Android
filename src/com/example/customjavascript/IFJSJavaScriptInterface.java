@@ -26,7 +26,7 @@ public class IFJSJavaScriptInterface {
             @Override
             public void run() {
                 Intent intent = new Intent(context, WebViewActivity.class);
-                intent.putExtra("url",  IFChartWebView.URL + reportlet);
+                intent.putExtra("url",  reportlet);
                 context.startActivity(intent);
             }
         });
