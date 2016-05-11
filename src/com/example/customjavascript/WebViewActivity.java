@@ -8,23 +8,12 @@ import android.os.Bundle;
  */
 public class WebViewActivity extends Activity {
 
-    private AbstractWebView webView;
+    private Html5ReportWebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        webView = new AbstractWebView(this);
-
-        String url = getIntent().getStringExtra("url");
-        loadUrl(url);
-
+        webView = new Html5ReportWebView(getIntent().getStringExtra("url"), this);
         this.setContentView(webView);
-    }
-
-    public void loadUrl(String url) {
-        if(webView != null) {
-            webView.loadUrl(url);
-        }
     }
 }
