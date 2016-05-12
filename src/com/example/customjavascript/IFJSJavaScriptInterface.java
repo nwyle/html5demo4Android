@@ -20,13 +20,13 @@ public class IFJSJavaScriptInterface {
 
 
     @JavascriptInterface
-    public void handleHyperLink(final String reportlet) {
+    public void handleHyperLink(final String path, final String name) {
 
         getLoadHandler().post(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new Intent(context, WebViewActivity.class);
-                intent.putExtra("url",  reportlet);
+                intent.putExtra("url",  path);
                 context.startActivity(intent);
             }
         });
